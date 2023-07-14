@@ -1,0 +1,37 @@
+{
+  "name": "sveltekit-smui-template",
+  "description": "SvelteKit + Svelte Material UI Template",
+  "license": "MIT",
+  "author": "Paul Pham <git@aquaron.com>",
+  "homepage": "https://svetekit-smui-template.aquaron.com/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pham/sveltekit-smui-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pham/sveltekit-smui-template/issues"
+  },
+  "version": "2.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5002",
+    "build": "vite build",
+    "clean": "sed '0,/^#---/d' .gitignore | xargs -I % sh -c 'eval rm -r %'",
+    "preview": "vite preview --host 0.0.0.0 --port 5002",
+    "prepare": "npm run smui-theme-light && npm run smui-theme-dark",
+    "smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
+    "smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark"
+  },
+  "devDependencies": {
+    "@material/theme": "^14.0.0",
+    "@material/typography": "^14.0.0",
+    "@smui/button": "^6.1.4",
+    "@smui/icon-button": "^6.1.4",
+    "@sveltejs/adapter-vercel": "^3.0.1",
+    "@sveltejs/app-utils": "next",
+    "@sveltejs/kit": "next",
+    "smui-theme": "^6.2.0",
+    "svelte": "^3.59.2",
+    "svelte-preprocess": "^5.0.4"
+  }
+}
